@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-sm">
+    <h1>VisualVM 메모리 테스트</h1>
+    <button type="button" class="btn btn-danger btn-lg" onclick="memoryTest()">OutOfMemoryError Button</button>
+</div>
+</body>
+<script>
+    function memoryTest() {
+        console.log('memory test start')
+        document.location.href = '/memorytest'
+    }
+</script>
+</html>
