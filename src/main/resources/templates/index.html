@@ -8,13 +8,19 @@
 <body>
 <div class="container-sm">
     <h1>VisualVM 메모리 테스트</h1>
-    <button type="button" class="btn btn-danger btn-lg" onclick="memoryTest()">OutOfMemoryError Button</button>
+    <button type="button" class="btn btn-danger btn-lg" onclick="byteMemoryTest()">OutOfMemoryError Button Byte</button>
+    <button type="button" class="btn btn-danger btn-lg" onclick="classMemoryTest()">OutOfMemoryError Button Class</button>
 </div>
 </body>
 <script>
-    function memoryTest() {
-        console.log('memory test start')
-        document.location.href = '/memorytest'
+    function byteMemoryTest() {
+        console.log('byte memory test start')
+        document.location.href = '/byte'
+    }
+
+    function classMemoryTest() {
+        console.log('class memory test start')
+        document.location.href = '/class'
     }
 </script>
 </html>

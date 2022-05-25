@@ -1,5 +1,6 @@
 package com.example.visualvmmemorytest.controller;
 
+import com.example.visualvmmemorytest.domain.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,8 +15,8 @@ public class MemoryTestController {
         return "index";
     }
 
-    @GetMapping("/memorytest")
-    public Integer memoryTest() {
+    @GetMapping("/byte")
+    public Integer byteMemoryTest() {
         List<byte[]> list = new ArrayList<>();
         int index = 1;
 
@@ -30,6 +31,18 @@ public class MemoryTestController {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @GetMapping("/class")
+    public Integer classMemoryTest() {
+        List<Member> memberList = new ArrayList<>();
+
+        int index = 1;
+        while (true) {
+            memberList.add(new Member(index, "member" + index));
+            Runtime rt = Runtime.getRuntime();
+            System.out.printf("[%d] free memory: %s%n", index++, rt.freeMemory());
         }
     }
 }
