@@ -40,7 +40,7 @@ public class MemoryTestController {
 
         int index = 1;
         while (true) {
-            memberList.add(new Member(index, "member" + index));
+            memberList.add(new Member(index, "member" + index, "Seoul, South Korea" + index));
             Runtime rt = Runtime.getRuntime();
             System.out.printf("[%d] free memory: %s%n", index++, rt.freeMemory());
         }
